@@ -1,23 +1,22 @@
-export class general extends HTMLElement{
-    constructor(){
+export class general extends HTMLElement {
+    constructor() {
         super();
-        this.attachShadow({mode:"open"})
+        this.attachShadow({ mode: "open" })
     }
 
-    lecHtml(){ 
-        let url="components/general.js";
-        url.replace(".js",".html")
-        console.log(url);
+    async lecHtml() {
+        return await(await fetch("components/general.html")).text()
     }
 
 
 
 
-    connectedCallback(){
-        this.lecHtml();
-        this.shadowRoot.innerHTML=``
-    }   
+    connectedCallback() {
+        this.lecHtml().then(html=>{
+            this.shadowRoot.innerHTML=html;
+        })
+    }
 }
-customElements.define("my-general",general)
+customElements.define("form-hunters", general)
 
 
