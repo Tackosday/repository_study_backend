@@ -1,11 +1,11 @@
-export class encabezado extends HTMLElement{
+export class details extends HTMLElement{
     constructor(){
         super();
         this.attachShadow({mode:"open"});
     }
 
     async connectedHtml(){
-        return await(await fetch("components/encabezado.html")).text()
+        return await(await fetch("components/details.html")).text()
     }
 
 
@@ -15,6 +15,6 @@ export class encabezado extends HTMLElement{
         })
     }
 
-
+    
 }
-customElements.define("encabezado-form",encabezado)
+customElements.define("details-encabezado",details)
