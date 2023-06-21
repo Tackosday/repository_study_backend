@@ -29,3 +29,9 @@ CREATE TABLE BILL(
  ID_PRODUCT INT(11) NOT NULL,
  FOREIGN KEY(ID_PRODUCT) REFERENCES PRODUCT(ID)
 );
+ 
+USE db_hunter_facture;
+INSERT INTO tb_client(identificacion,full_name,email,address,phone) VALUES("1095787608","Juan David Escalante Castañeda","juandaesca5@hotmial.com","poray en un puente","3133513939");
+SELECT * FROM tb_client ;
+UPDATE tb_client SET identificacion="1095458765",email="junadesca53@gmail.com" WHERE identificacion=1095787608;
+DELETE FROM tb_client WHERE identificacion=1095458765;
