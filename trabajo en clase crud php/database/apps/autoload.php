@@ -1,23 +1,23 @@
 <?php
-// function autoload($class){
+function autoload($class){
     function serchDir($url)
     {
         $nameDir=array();
         $dirFather = scandir($url);
-        print_r($dirFather);
-        echo "<br>";
+        print_r($dirFather) ;
         foreach($dirFather as $dirSon){
-            $nameDir = $dirSon;
-            // if($dirSon != "." && $dirSon != ".."){
-            //     $nameDir[]=$dirSon;
-            // }
-            return $nameDir;
+            if($dirSon != "." && $dirSon != ".."){
+                 $nameDir[]=$dirSon;
+            }
         }
+        return $nameDir;
     }
-    // $dirs =array();
-    // $urlFather = dirname(__DIR__)."/database/tables";
-    // foreach(serchDir($urlFather) as $dir){
-    //     $urlDir = dirname(__DIR__).'/database/tables'.$dir.'/';
-    //     $dirs[]=$urlDir;
-    // }
-// }
+    
+    $urlFather=dirname(__DIR__).'\tables';
+    $dirs =array();
+    $urlFather = dirname(__DIR__)."/database/tables";
+    foreach(serchDir($urlFather) as $dir){
+        $urlDir = dirname(__DIR__).'/database/tables'.$dir.'/';
+        $dirs[]=$urlDir;
+    }
+}
