@@ -12,11 +12,12 @@ protected $Cnx;
 function __construct(private $db ="mysql", private $port =3306 ){
 
     try{
-        $connection = new PDO(DB_TYPE.":host".DB_HOST.";dbname)
+        $this->Cnx = new PDO($this->driver.":host=".$this->__get('host').";port=".$this->port.";dbname=".$this->__get('dbname').";user=".$this->username.";password=".$this->password);
+        $this->Cnx->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
 }
-catch{
-
+catch(\PDOException $e){
+    $this->Cnx=$e->getMessage();
+    print_r($e->getMessage());
 }
 }
-
 }
