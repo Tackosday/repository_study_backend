@@ -18,6 +18,45 @@
         parent::__construct($dbCnx);
     }
 
+    public function getAll(){
+        try {
+            $stm = $this->dbCnx;
+            $stm->prepare("SELECT * FROM academic_area");
+            $stm->execute();
+            return $stm->fetchAll(PDO::FETCH_ASSOC); //devuelve arrays asociativos
+        } catch (PDOException $e){
+            $this->dbCnx=$e->getMessage();
+        }
+    }
+    public function insert(){
+        try {
+            $stm = $this->dbCnx;
+            $stm->prepare("INSERT INTO academic_area (id, id_area, id_staff, id_position, id_journey) VALUES (?,?,?,?,?)");
+            $stm->execute(array($this->id, $this->area, $this->staff, $this->position, $this->journey)); 
+        } catch (PDOException $e){
+            $this->dbCnx=$e->getMessage();
+        }
+    }
+
+    public function update() {
+        try {
+            $stm = $this->dbCnx;
+            $stm->prepare("UPDATE academic_area SET id = ?, id_area = ?, id_staff = ?, id_position = ?, id_journey = ?");
+            $stm->execute([$this->id, $this->area, $this->staff, $this->position, $this->journey]);
+        } catch (PDOException $e){
+            $this->dbCnx=$e->getMessage();
+        }
+    }
+
+    public function delete(){
+        try {
+            $stm = $this->dbCnx;
+            $stm->prepare("DELETE FROM academic_area WHERE id = ?");
+            $stm->execute([$this->id]);
+        } catch (PDOException $e){
+            $this->dbCnx=$e->getMessage();
+        }
+    }
     
 
  }
