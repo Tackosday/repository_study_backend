@@ -5,7 +5,7 @@ abstract class dataConnection
     // private $username = 'sputnik';
     // private $password = 'Sp3tn1kC@';
     // protected $dbname = 'campusland';
-
+    protected $server = 'mysql';
     protected $host = 'localhost';
     private $username = 'root';
     private $password = '';

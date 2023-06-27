@@ -1,4 +1,5 @@
 <?php
+require_once 'dataConnection.php';
 interface ambient
 {
     public function __get($a);
