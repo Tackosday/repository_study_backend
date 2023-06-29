@@ -1,14 +1,18 @@
 import {createServer} from 'http';
-
-let myServer =createServer((req,res)=>{
-    let datos = "";
-    req.on("data",(chunk)=>{
-        datos += chunk;
+import https from 'https';
+let myServer = createServer((req,res)=>{
+    let data="";
+    https.get(`https://pokeapi.co/api/v2/pokemon/1`,(peticion)=>{
+        peticion.on("data",(chunk)=>{
+            data += chunk
+        })
+        peticion.on("end",()=>{
+            res.end(data)
+        })
     })
-    req.on("end",()=>{
-        res.end(datos);
-    });
 })
+
+
 
 
 let config ={
