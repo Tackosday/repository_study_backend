@@ -1,17 +1,19 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type":"module", 
+  "description": "instalacion de nodemon, express y dotenv ",
+  "main": "app.js",
+  "type":"module",
   "scripts": {
-    "dev":"nodemon --quiet app.js"
+    "dev": "nodemon --quiet app.js"
   },
   "keywords": [],
   "author": "Tackosday",
   "github":"https://github.com/JuanDavidEscalanteCastaneda-Campus",
   "license": "ISC",
   "devDependencies": {
+    "dotenv": "16.3.1",
+    "express": "4.18.2",
     "nodemon": "2.0.22"
   }
 }
