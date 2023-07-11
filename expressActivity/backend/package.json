@@ -1,19 +1,24 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "instalacion de nodemon, express y dotenv ",
-  "main": "app.js",
-  "type":"module",
+  "description": "instalacion de nodemon, express, dotenv,class-transformer,reflect-metadata y typescript",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon --quiet app.js"
+    "dev": "nodemon --quiet app.js",
+    "tsc": "tsc -w"
   },
   "keywords": [],
   "author": "Tackosday",
-  "github":"https://github.com/JuanDavidEscalanteCastaneda-Campus",
+  "github": "https://github.com/JuanDavidEscalanteCastaneda-Campus",
   "license": "ISC",
   "devDependencies": {
+    "class-transformer": "0.5.1",
     "dotenv": "16.3.1",
     "express": "4.18.2",
-    "nodemon": "2.0.22"
+    "nodemon": "2.0.22",
+    "reflect-metadata": "0.1.13",
+    "typescript": "5.1.6"
   }
+  
 }
