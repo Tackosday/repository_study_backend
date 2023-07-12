@@ -8,7 +8,7 @@ const storage=Router();
 dotenv.config();
 
 //creacion de entorno en my sql
-storageCampus.use((req,res,next)=>{
+storage.use((req,res,next)=>{
     let myconfig = JSON.parse(process.env.MY_CONNECT);
     con = mysql.createPool(myconfig);
     next();
@@ -16,3 +16,25 @@ storageCampus.use((req,res,next)=>{
 
 
 
+//obtener
+storage.get(`/account`,(req,res)=>{
+    res.send("hola get");
+});
+ 
+//agregar
+storage.post(`/account`,(req,res)=>{
+    res.send("hola agregar");
+});
+
+//actualizar
+storage.patch(`/account`,(req,res)=>{
+    res.send("hola actualizar");
+});
+
+//eliminar
+storage.delete(`/account`,(req,res)=>{
+    res.send("hola delete");
+});
+
+
+export default {storage};
