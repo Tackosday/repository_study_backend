@@ -3,17 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev":"nodemon --quiet index.js",
+    "tsc":"tsc -w"
   },
   "keywords": [],
-  "author": "",
+  "author": "Juan David Escalante",
+  "github":"https://github.com/JuanDavidEscalanteCastaneda-Campus",
+  "description":"",
   "license": "ISC",
+  
   "devDependencies": {
     "class-transformer": "0.5.1",
     "dotenv": "16.3.1",
     "nodemon": "3.0.1",
     "reflect-metadata": "0.1.13",
     "typescript": "5.1.6"
-  },
-  "description": ""
+  }
 }
