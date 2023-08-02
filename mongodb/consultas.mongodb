@@ -1,0 +1,2 @@
+use("firstdb");
+db.cliente.find({Nombre:{"paula"}});
