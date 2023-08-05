@@ -8,6 +8,7 @@
 <br>
 
 <h3>temas aprendidos</h3>
+
 - uso basico de php y su funcionamiento de lado del backend
 - manejo de node y configuracion basica
 - uso de dependencias en node 
