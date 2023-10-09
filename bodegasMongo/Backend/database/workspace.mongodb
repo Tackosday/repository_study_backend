@@ -1,0 +1,258 @@
+use("db_bodegas");
+db.createCollection("users", { 
+    validator: {
+        $jsonSchema: {
+            "bsonType": "object",
+            "additionalProperties":false,
+            "required": ["_id", "nombre","email","email_verified_at","estado","created_by","updated_by","foto","password","created_at","updated_at","deleted_at"],
+            "properties": {
+                "_id": {
+                    "bsonType": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'_id' el _id es incorrecto"
+                },
+                "nombre": {
+                    "bsonType": "string",
+                    "description": "'nombre' el nombre es incorrecto"
+                },
+                "email": {
+                    "bsonType": "string",
+                    "description": "'email' el email es incorrecto"
+                },
+                "email_verified_at": {
+                    "bsonType":  ["date", "null"],
+                    "description": "'email_verified_at' el email_verified_at es incorrecto"
+                },
+                "estado": {
+                    "bsonType": "number",
+                    "description": "'estado' el estado es incorrecto"
+                },
+                "created_by": {
+                    "bsonType":  ["number", "null"],
+                    "description": "'created_by' el created_by es incorrecto"
+                },
+                "updated_at": {
+                    "bsonType": ["date", "null"],
+                    "description": "'updated_at' el updated_at es incorrecto"
+                },
+                "deleted_at": {
+                    "bsonType": ["date", "null"],
+                    "description": "'deleted_at' el deleted_at es incorrecto"
+                }
+            }
+        }
+    }
+});
+
+use("db_bodegas");
+db.createCollection("productos", {
+    validator: {
+        $jsonSchema: {
+            "bsonType": "object",
+            "additionalProperties":false,
+            "required": ["_id", "nombre", "descripcion", "estado", "created_by", "updated_by", "created_at","updated_at", "deleted_at"],
+            "properties": {
+                "_id": {
+                    "bsonType": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'_id' el _id es incorrecto"
+                },
+                "nombre": {
+                    "bsonType": "string",
+                    "description": "'nombre' el nombre es incorrecto"
+                },
+                "descripcion": {
+                    "bsonType": "string",
+                    "description": "'descripcion' el descripcion es incorrecto"
+                },
+                "estado": {
+                    "bsonType":"number",
+                    "description": "'estado' el estado es incorrecto"
+                },
+                "created_by":{
+                    "bsonType":["number","null"],
+                    "description": "'created_by' el created_by es incorrecto"
+                },
+                "updated_by":{
+                    "bsonType": ["number","null"],
+                    "description": "'updated_by' el updated_by es incorrecto"
+                },
+                "created_at":{
+                    "bsonType": ["date","null"],
+                    "description": "'created_at' el created_at es incorrecto"
+                },
+                "updated_at": {
+                    "bsonType": ["date","null"],
+                    "description": "'updated_at' el updated_at es incorrecto"
+                },
+                "deleted_at": {
+                    "bsonType": ["date","null"],
+                    "description": "'deleted_at' el deleted_at es incorrecto"
+                }
+            }
+        }
+    }
+});
+
+use("db_bodegas");
+db.createCollection("bodegas", {
+    validator: {
+        $jsonSchema: {
+            "bsonType": "object",
+            "additionalProperties":false,
+            "required": ["_id","nombre","id_responsable","estado","created_by","updated_by","created_at","updated_at","deleted_at"],
+            "properties": {
+                "_id": {
+                    "bsonType": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'_id', el _id es incorrecto",
+                },
+                "nombre": {
+                    "bsonType": "string",
+                    "description": "'nombre' el nombre es incorrecto"
+                },
+                "id_responsable": {
+                    "bsonType": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'id_responsable', el id_responsable es incorrecto",
+                },
+                "estado": {
+                    "bsonType":"number",
+                    "description": "'estado' el estado es incorrecto"
+                },
+                "created_by":{
+                    "bsonType":["number","null"],
+                    "description": "'created_by' el created_by es incorrecto"
+                },
+                "updated_by":{
+                    "bsonType": ["number","null"],
+                    "description": "'updated_by' el updated_by es incorrecto"
+                },
+                "created_at":{
+                    "bsonType": ["string","null"],
+                    "description": "'created_at' el created_at es incorrecto"
+                },
+                "updated_at": {
+                    "bsonType": ["string","null"],
+                    "description": "'updated_at' el updated_at es incorrecto"
+                },
+                "deleted_at": {
+                    "bsonType": ["string","null"],
+                    "description": "'deleted_at' el deleted_at es incorrecto"
+                }
+            }
+        }
+    }
+});
+
+use("db_bodegas");
+db.createCollection("inventarios", {
+    validator: {
+        $jsonSchema: {
+            "bsonType": "object",
+            "additionalProperties":false,
+            "required": ["_id","id_bodega","id_producto","cantidad","created_by","created_at","updated_at","deleted_at",],
+            "properties": {
+                "_id": {
+                    "bsonType": ["number", "objectId"],
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'_id', el _id es incorrecto",
+                },
+                "id_bodega": {
+                    "bsonType": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'id_bodega', el id_bodega es incorrecto",
+                },
+                "id_producto": {
+                    "bsonType": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'id_producto', el id_producto es incorrecto",
+                },
+                "cantidad": {
+                    "bsonType": "number",
+                    "description": "'cantidad' la cantidad es incorrecta"
+                },
+                "created_by": {
+                    "bsonType":  ["number", "null"],
+                    "description": "'created_by' el created_by es incorrecto"
+                },
+                "created_at": {
+                    "bsonType": ["date", "null"],
+                    "description": "'created_at' el created_at es incorrecto"
+                },
+                "updated_at": {
+                    "bsonType": ["date", "null"],
+                    "description": "'updated_at' el updated_at es incorrecto"
+                },
+                "deleted_at": {
+                    "bsonType": ["date", "null"],
+                    "description": "'deleted_at' el deleted_at es incorrecto"
+                }
+            }
+        }
+    }
+});
+
+use("db_bodegas");
+db.createCollection("historiales",{
+    validator: {
+        $jsonSchema: {
+            "bsonType": "object",
+            "additionalProperties":false,
+            "required": ["_id","cantidad","id_bodega_origen","id_bodega_destino","id_inventario","created_by","created_at","updated_at","deleted_at"],
+            "properties": {
+                "_id": {
+                    "bsonType": ["number", "objectId"],
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'_id', el _id es incorrecto",
+                },
+                "cantidad": {
+                    "bsonType": "number",
+                    "description": "'cantidad' la cantidad es incorrecta"
+                },
+                "id_bodega_origen": {
+                    "bsonType": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'id_bodega_origen', el id_bodega_origen es incorrecto",
+                },
+                "id_bodega_destino": {
+                    "bsonType": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'id_bodega_destino', el id_bodega_destino es incorrecto",
+                },
+                "id_inventario": {
+                    "bsonType": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "'id_inventario', el id_inventario es incorrecto",
+                },
+                "created_by": {
+                    "bsonType":  ["number", "null"],
+                    "description": "'created_by' el created_by es incorrecto"
+                },
+                "created_at": {
+                    "bsonType": ["date", "null"],
+                    "description": "'created_at' el created_at es incorrecto"
+                },
+                "updated_at": {
+                    "bsonType": ["date", "null"],
+                    "description": "'updated_at' el updated_at es incorrecto"
+                },
+                "deleted_at": {
+                    "bsonType": ["date", "null"],
+                    "description": "'deleted_at' el deleted_at es incorrecto"
+                }
+            }
+        }
+    }
+});

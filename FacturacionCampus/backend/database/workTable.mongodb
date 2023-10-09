@@ -1,0 +1,330 @@
+use("facturacioncampus_JuanEscalante")
+db.createCollection("usuario",{
+    validator: {
+        $jsonSchema: {
+            bsonType:"object",
+            title:"usuario",
+            required: [
+                "id","nombre","edad","email","rol","usuario","contraseña"],
+            properties:{
+                "id":{
+                    bsonType:"number",
+                    description:"el id debe ser un numero"
+                },
+                "nombre":{
+                    bsonType:"string",
+                    maxLength:100,
+                    description:"el nombre debe ser una string menor de 100 carancteres"
+                },
+                "edad":{
+                    bsonType:"number",
+                    maxLength:3,
+                    description:"la edad debe ser un numero correspendiente a la edad menor de 3 caracteres"
+                },
+                "email":{
+                    bsonType:"string",
+                    maxLength:100,
+                    description:"el email debe ser una string menor de 100 caracteres"
+                },
+                "rol":{
+                    bsonType:"number",
+                    description:"el rol debe ser un numero "
+                },
+                "usuario":{
+                    bsonType:"string",
+                    maxLength:100,
+                    description:"el usuario debe ser una string menor de 100 caracters"
+                },
+                "contraseña":{
+                    bsonType:"string",
+                    maxLength:50,
+                    description:"la contraseña debe ser una string menor de 50 caracteres"
+                }
+
+            },
+        }
+    }
+})
+
+use("facturacioncampus_JuanEscalante")
+db.createCollection("his_salarios",{
+    validator: {
+        $jsonSchema: {
+            bsonType:"object",
+            title:"his_salarios",
+            required: ["id","nombre","valor","fecha"],
+            properties:{
+                id:{
+                    bsonType:"number",
+                    description:"el id debe ser un numero"
+                },
+                nombre:{
+                    bsonType:"number",
+                    description:"el id debe ser un numero"
+                },
+                valor:{
+                    bsonType:"number",
+                    maxLength:13,
+                    description:"el valor debe ser un numero correspendiente a el precio menor de $1.000.000.000.000, tampoco acepta puntos ni comas"
+                },
+                fecha:{
+                    bsonType:"date",
+                    description:"la fecha debe ser una fecha valida"
+                } 
+            },
+        }
+    }
+})
+
+use("facturacioncampus_JuanEscalante")
+db.createCollection("ventas",{
+    validator: {
+        $jsonSchema: {
+            bsonType:"object",
+            title:"ventas",
+            required: ["id","vendedor","comprador","fecha","valor","producto"],
+            properties:{
+                "id":{
+                    bsonType:"number",
+                    description:"el id debe ser un numero"
+                },
+                "vendedor":{
+                    bsonType:"number",
+                    description:"el vendedor debe ser un numero"
+                },
+                "comprador":{
+                    bsonType:"number",
+                    description:"el comprador debe ser un numero"
+                },
+                "fecha":{
+                    bsonType:"date",
+                    description:"la fecha debe ser una fecha valida"
+                },
+                "valor":{
+                    bsonType:"number",
+                    maxLength:13,
+                    description:"el valor debe ser un numero correspendiente a el precio menor de $1.000.000.000.000, tampoco acepta puntos ni comas"
+                },
+                "producto":{
+                    bsonType:"number",
+                    description:"el producto debe ser un numero"
+                }
+
+            },
+        }
+    }
+})
+
+use("facturacioncampus_JuanEscalante")
+db.createCollection("inventario",{
+    validator: {
+        $jsonSchema: {
+            bsonType:"object",
+            title:"inventario",
+            required: ["producto","cantidad","fecha_ingreso","fecha_caducidad","caducidad","proveedor"],
+            properties:{
+                "producto":{
+                    bsonType:"number",
+                    description:"el producto debe ser un numero"
+                },
+                "cantidad":{
+                    bsonType:"number",
+                    maxLength:100000,
+                    description:"el valor debe ser un numero que no sobre pase el numero 100000"
+                },
+                "fecha_ingreso":{
+                    bsonType:"date",
+                    description:"la fecha_ingreso debe ser una fecha valida"
+                },
+                "fecha_caducidad":{
+                    bsonType:"date",
+                    description:"la fecha_caducidad debe ser una fecha valida"
+                },
+                "caducidad":{
+                    bsonType:"string",
+                    maxLength:20,
+                    description:"el valor debe ser un string que no supere los 20 caracteres"
+                },
+                "proveedor":{
+                    bsonType:"number",
+                    description:"el proveedor debe ser un numero"
+                }
+            },
+        }
+    }
+})
+
+use("facturacioncampus_JuanEscalante")
+db.createCollection("proveedores",{
+    validator:{
+        $jsonSchema: {
+            bsonType:"object",
+            title:"proveedores",
+            required: ["id","nombre"],
+            properties:{
+                "id":{
+                    bsonType:"number",
+                    description:"el id debe ser un numero"
+                },
+                "nombre":{
+                    bsonType:"string",
+                    maxLength:100,
+                    description:"el nombre debe ser una string menor de 100 carancteres"
+                }
+
+            },
+        }
+    }
+})
+
+use("facturacioncampus_JuanEscalante")
+db.createCollection("his_proveedores",{
+    validator: {
+        $jsonSchema: {
+            bsonType:"object",
+            title:"his_proveedores",
+            required: ["id","descripcion","valor"],
+            properties:{
+                "id":{
+                    bsonType:"number",
+                    description:"el id debe ser un numero"
+                },
+                "descripcion":{
+                    bsonType:"string",
+                    maxLength:800,
+                    description:"la descripcion debe ser una string menor que 800 caracteres"
+                },
+                "valor":{
+                    bsonType:"number",
+                    maxLength:13,
+                    description:"el valor debe ser un numero correspendiente a el precio menor de $1.000.000.000.000, tampoco acepta puntos ni comas"
+                }
+            },
+        }
+    }
+})
+
+use("facturacioncampus_JuanEscalante")
+db.createCollection("productos",{
+    validator: {
+        $jsonSchema: {
+            bsonType:"object",
+            title:"productos",
+            required: ["id","nombre","descripcion","valor"],
+            properties:{
+                "id":{
+                    bsonType:"number",
+                    description:"el id debe ser un numero"
+                },
+                "nombre":{
+                    bsonType:"string",
+                    maxLength:100,
+                    description:"el nombre debe ser una string menor de 100 carancteres"
+                },
+                "descripcion":{
+                    bsonType:"string",
+                    maxLength:800,
+                    description:"la descripcion debe ser una string menor que 800 caracteres"
+                },
+                "valor":{
+                    bsonType:"number",
+                    maxLength:13,
+                    description:"el valor debe ser un numero correspendiente a el precio menor de $1.000.000.000.000, tampoco acepta puntos ni comas"
+                }
+            },
+        }
+    }
+})
+
+use("facturacioncampus_JuanEscalante")
+db.createCollection("roles",{
+    validator: {
+        $jsonSchema: {
+            bsonType:"object",
+            title:"roles",
+            required: ["id","nombre"],
+            properties:{
+                "id":{
+                    bsonType:"number",
+                    description:"el id debe ser un numero"
+                },
+                "nombre":{
+                    bsonType:"string",
+                    maxLength:100,
+                    description:"el nombre debe ser una string menor de 100 caracteres"
+                }
+            },
+        }
+    }
+})
+
+use("facturacioncampus_JuanEscalante")
+db.createCollection("his_medico",{
+    validator: {
+        $jsonSchema: {
+            bsonType:"object",
+            title:"his_medico",
+            required: ["id","paciente","medico","fecha","valor","descripcion","med_suministrada"],
+            properties:{
+                "id":{
+                    bsonType:"number",
+                    description:"el id debe ser un numero"
+                },
+                "paciente":{
+                    bsonType:"number",
+                    description:"el paciente debe ser un numero"
+                },
+                "medico":{
+                    bsonType:"number",
+                    description:"el medico debe ser un numero"
+                },
+                "fecha":{
+                    bsonType:"date",
+                    description:"la fecha debe ser una fecha valida"
+                },
+                "valor":{
+                    bsonType:"number",
+                    maxLength:13,
+                    description:"el valor debe ser un numero correspendiente a el precio menor de $1.000.000.000.000, tampoco acepta puntos ni comas"
+                },
+                "descripcion":{
+                    bsonType:"string",
+                    maxLength:800,
+                    description:"la descripcion debe ser una string menor que 800 caracteres"
+                },
+                "med_suministrada":{
+                    bsonType:"number",
+                    description:"el med_suministrada debe ser un numero"
+                }
+
+            },
+
+        }
+    }
+})
+
+use("facturacioncampus_JuanEscalante")
+db.createCollection("suministro",{
+    validator: {
+        $jsonSchema: {
+            bsonType:"object",
+            title:"suministro",
+            required: ["id","producto","descripcion"],
+            properties:{
+                "id":{
+                    bsonType:"number",
+                    description:"el id debe ser un numero"
+                },
+                "producto":{
+                    bsonType:"number",
+                    description:"el producto debe ser un numero"
+                },
+                "descripcion":{
+                    bsonType:"string",
+                    maxLength:800,
+                    description:"la descripcion debe ser una string menor que 800 caracteres"
+                }
+            }
+        }
+    }
+})

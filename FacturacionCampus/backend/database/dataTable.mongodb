@@ -1,0 +1,320 @@
+use("facturacioncampus_JuanEscalante")
+db.usuario.insertMany([
+    {
+        "id":1,
+        "nombre":"Juan Jose Duran Rincon",
+        "edad":17,
+        "email":"juanjobackend@hotmail.com",
+        "rol":1,
+        "usuario":"fred",
+        "contraseña":"jjuan322"
+    },
+    {
+        "id":2,
+        "nombre":"Juan David Escalante Castañeda",
+        "edad":19,
+        "email":"juandaesca5@hotmail.com",
+        "rol":2,
+        "usuario":"Tackosday",
+        "contraseña":"juan123"
+    },
+    {
+        "id":3,
+        "nombre":"Maria Camila Amaya Rubio",
+        "edad":18,
+        "email":"micami123@hotmail.com",
+        "rol":3,
+        "usuario":"avocadorable",
+        "contraseña":"k1000a"
+    },
+    {
+        "id":4,
+        "nombre":"Jhon Jairo Gomes Roa",
+        "edad":19,
+        "email":"jjhonker@hotmail.com",
+        "rol":4,
+        "usuario":"jhonker",
+        "contraseña":"jjBraum"
+    },
+    {
+        "id":5,
+        "nombre":"Jhon Alejandro",
+        "edad":13,
+        "email":"esquizofrenico@hotmail.com",
+        "rol":5,
+        "usuario":"theEsquizofrenico",
+        "contraseña":"calle13"
+    }
+    
+])
+
+use("facturacioncampus_JuanEscalante")
+db.roles.insertMany([
+   
+    {
+        "id":2,
+        "nombre":"empleado"
+    },
+    {
+        "id":2,
+        "nombre":"developer"
+    },
+    {
+        "id":3,
+        "nombre":"medico"
+    },
+    {
+        "id":3,
+        "nombre":"empleado"
+    },
+    {
+        "id":1,
+        "nombre":"medico"
+    },
+    {
+        "id":1,
+        "nombre":"empleado"
+    },
+    {
+        "id":4,
+        "nombre":"cliente"
+    },
+    {
+        "id":5,
+        "nombre":"cliente"
+    }
+    
+])
+
+use("facturacioncampus_JuanEscalante")
+db.his_salarios.insertMany([
+   {
+    "id":1,
+    "nombre":2,
+    "valor":2000000,
+    "fecha":new ISODate("2023-07-18T06:31:15Z")
+   },
+   {
+    "id":2,
+    "nombre":2,
+    "valor":2000000,
+    "fecha":new ISODate("2023-04-16T06:31:15Z")
+   },
+   {
+    "id":3,
+    "nombre":3,
+    "valor":4000000,
+    "fecha":new ISODate("2023-06-22T06:31:15Z")
+   },
+   {
+    "id":4,
+    "nombre":3,
+    "valor":4000000,
+    "fecha":new ISODate("2023-05-15T06:31:15Z")
+   },
+   {
+    "id":4,
+    "nombre":1,
+    "valor":3000000,
+    "fecha":new ISODate("2023-08-07T06:31:15Z")
+   }
+])
+
+use("facturacioncampus_JuanEscalante")
+db.ventas.insertMany([
+    {
+        "id":1,
+        "vendedor":1,
+        "comprador":5,
+        "fecha":new ISODate("2023-05-16T06:31:15Z"),
+        "valor":5000,
+        "producto":1
+    },
+    {
+        "id":1,
+        "vendedor":1,
+        "comprador":5,
+        "fecha":new ISODate("2023-05-01T06:31:15Z"),
+        "valor":2000,
+        "producto":2
+    },
+    {
+        "id":1,
+        "vendedor":1,
+        "comprador":5,
+        "fecha":new ISODate("2023-06-16T06:31:15Z"),
+        "valor":5000,
+        "producto":1
+    },
+    {
+        "id":1,
+        "vendedor":1,
+        "comprador":5,
+        "fecha":new ISODate("2023-08-15T06:31:15Z"),
+        "valor":8000,
+        "producto":3
+    }
+])
+
+use("facturacioncampus_JuanEscalante")
+db.inventario.insertMany([
+    {
+        "producto":1,
+        "cantidad":40,
+        "fecha_ingreso":new ISODate("2023-04-16T06:31:15Z"),
+        "fecha_caducidad":new ISODate("2023-05-16T06:31:15Z"),
+        "caducidad":"caducado",
+        "proveedor":1
+    },
+    {
+        "producto":2,
+        "cantidad":30,
+        "fecha_ingreso":new ISODate("2023-05-16T06:31:15Z"),
+        "fecha_caducidad":new ISODate("2023-07-16T06:31:15Z"),
+        "caducidad":"no caducado",
+        "proveedor":2
+    },
+    {
+        "producto":2,
+        "cantidad":150,
+        "fecha_ingreso":new ISODate("2023-06-16T06:31:15Z"),
+        "fecha_caducidad":new ISODate("2023-08-16T06:31:15Z"),
+        "caducidad":"caducado",
+        "proveedor":1
+    },
+    {
+        "producto":3,
+        "cantidad":100,
+        "fecha_ingreso":new ISODate("2023-09-16T06:31:15Z"),
+        "fecha_caducidad":new ISODate("2023-11-16T06:31:15Z"),
+        "caducidad":"no caducado",
+        "proveedor":3
+    },
+    {
+        "producto":1,
+        "cantidad":60,
+        "fecha_ingreso":new ISODate("2023-03-16T06:31:15Z"),
+        "fecha_caducidad":new ISODate("2023-05-16T06:31:15Z"),
+        "caducidad":"caducado",
+        "proveedor":2
+    }
+])
+
+use("facturacioncampus_JuanEscalante")
+db.proveedores.insertMany([
+    {
+        "id":1,
+        "nombre":"juan pablo"
+    },
+    {
+        "id":2,
+        "nombre":"heisemberg"
+    },
+    {
+        "id":3,
+        "nombre":"camilo sanchez"
+    }
+])
+
+use("facturacioncampus_JuanEscalante")
+db.his_proveedores.insertMany([
+    {
+        "id":1,
+        "descripcion":"se han comprado 6 cajas de paracetamol",
+        "valor":10000
+    },
+    {
+        "id":2,
+        "descripcion":"se han comprado 6 cajas de acetaminofen",
+        "valor":70000
+    },
+    {
+        "id":3,
+        "descripcion":"se han comprado 6 cajas de metanfetamina",
+        "valor":600000
+    },
+    {
+        "id":4,
+        "descripcion":"se han comprado 6 cajas de parasetamol",
+        "valor":50000
+    }
+])
+
+use("facturacioncampus_JuanEscalante")
+db.productos.insertMany([
+    {
+        "id":1,
+        "nombre":"parcetamol",
+        "descripcion":"medicina para el dolor de cabeza, de vende por tabletas",
+        "valor":1000
+    },
+    {
+        "id":2,
+        "nombre":"acetaminofen",
+        "descripcion":"medicina milagrosa curadora de dioses, de vende por tarro",
+        "valor":1000
+    },
+    {
+        "id":3,
+        "nombre":"metanfetamina",
+        "descripcion":"medicina para el dolor de existencia, de vende por gramos",
+        "valor":1000
+    }
+    
+])
+
+use("facturacioncampus_JuanEscalante")
+db.suministros.insertMany([
+    {
+        "id":1,
+        "producto":2,
+        "descripcion":"200ml cada 8 horas por 3 dias "
+    },
+    {
+        "id":1,
+        "producto":1,
+        "descripcion":"un tableta por dia "
+    },
+    {
+        "id":2,
+        "producto":1,
+        "descripcion":"200ml cada 8 horas por 6 dias "
+    },
+    {
+        "id":3,
+        "producto":3,
+        "descripcion":"una trabada diaria debajo un puente"
+    },
+
+])
+
+use("facturacioncampus_JuanEscalante")
+db.his_medico.insertMany([
+    {
+        "id":1,
+        "paciente":5,
+        "medico":2,
+        "fecha":new Date(),
+        "valor":50000,
+        "descripcion":"conmocion en rodilla izquierda",
+        "med_suministrada":1
+    },
+    {
+        "id":4,
+        "paciente":4,
+        "medico":1,
+        "fecha":new Date(),
+        "valor":50000,
+        "descripcion":"dolor de cabeza, conmocion de cabeza, ",
+        "med_suministrada":2
+    },
+    {
+        "id":1,
+        "paciente":5,
+        "medico":1,
+        "fecha":new Date(),
+        "valor":50000,
+        "descripcion":"se agarro a pelear con un payaso diciendo que era batman",
+        "med_suministrada":3
+    }
+])

@@ -1,0 +1,37 @@
+use("datalogin")
+db.createCollection("usuario",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            title:"usuario",
+            required:["id","usuario","nombre","contrasena","token","email"],
+            properties:{
+                "id":{
+                     bsonType:"number",
+                     description:"la id que ingresaste no es un numero"
+                },
+                "usuario":{
+                    bsonType: "string",
+                    maxLength:30,
+                    description:"el usuario debe de ser un cadena de texto menor de 30 caracteres"
+                },
+                "contrasena":{
+                    bsonType: "string",
+                    maxLength:30,
+                    description:"la contrasena debe de ser un cadena de texto menor de 30 carecteres"
+                },
+                "token":{
+                    bsonType: ["string","null"],
+                    description:"el tocken debe de ser un cadena de texto"
+                },
+                "email":{
+                    bsonType: "string",
+                    maxLength:80,
+                    description:"el email debe de ser un cadena de texto menor de 80 caracteres"
+                }
+            },
+            uniqueItems:true,
+            additionalItems:false
+        }
+    }
+});

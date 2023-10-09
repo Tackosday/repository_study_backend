@@ -1,0 +1,285 @@
+use(testNode);
+db.createCollection(usuario,{
+    usu_id,
+    usu_nombre,
+    usu_segdo_nombre,
+    usu_primer_apellido_usuar,
+    usu_segdo_apellido_usuar,
+    usu_telefono,
+    usu_direccion,
+    usu_email,
+    usu_tipodoc,
+    usu_genero,
+    usu_acudiente
+
+}),
+
+{
+    $jsonSchema: {
+        bsonType:"object",
+        additionalProperties: false,
+        required: [
+            'usu_id',
+            'usu_nombre',
+            'usu_segdo_nombre',
+            'usu_primer_apellido_usuar',
+            'usu_segdo_apellido_usuar',
+            'usu_telefono',
+            'usu_direccion',
+            'usu_email',
+            'usu_tipodoc',
+            'usu_genero',
+            'usu_acudiente'],
+        usu_id:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        usu_nombre:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        },
+        usu_segdo_nombre:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        },
+        usu_primer_apellido_usuar:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        },
+        usu_segdo_apellido_usuar:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        },
+        usu_telefono:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        },
+        usu_direccion:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        },
+        usu_email:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        },
+        usu_tipodoc:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        usu_genero:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        usu_acudiente:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        }
+    }
+};
+
+db.createCollection(tipo_documento,{
+    tipdoc_id,
+    tipdoc_nombre,
+    tipdoc_abreviatura
+}),
+{
+    $jsonSchema: {
+        bsonType:"object",
+        additionalProperties: false,
+        required: [
+            tipdoc_id,
+            tipdoc_nombre,
+            tipdoc_abreviatura
+        ],
+
+        tipdoc_id:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        tipdoc_nombre:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        },
+        tipdoc_abreviatura:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        }
+    }
+};
+
+db.createCollection(genero,{
+    gen_id,
+    gen_nombre,
+    gen_abreviatura
+}),
+{
+    $jsonSchema: {
+        bsonType:"object",
+        additionalProperties: false,
+        required: [
+            gen_id,
+            gen_nombre,
+            gen_abreviatura
+        ],
+        gen_id:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        gen_nombre:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        },
+        gen_abreviatura:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        },
+
+    }
+};
+
+db.createCollection(cita,{
+    cit_codigo,
+    cit_fecha,
+    cit_estadoCita,
+    cit_medico,
+    cit_datosUsuario
+}),
+{
+    $jsonSchema: {
+        bsonType:"object",
+        additionalProperties: false,
+        required: [
+            cit_codigo,
+            cit_fecha,
+            cit_estadoCita,
+            cit_medico,
+            cit_datosUsuario
+        ],
+        cit_codigo:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        cit_fecha:{
+            bsontype:'date',
+            description: 'debe ser una fecha'
+        },
+        cit_estadoCita:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        cit_medico:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        cit_datosUsuario:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        }            
+    }
+};
+
+db.createCollection(estado_cita,{
+    estcita_id,
+    estcita_nombre
+}),
+{
+    $jsonSchema: {
+        bsonType:"object",
+        additionalProperties: false,
+        required: [
+            estcita_id,
+            estcita_nombre
+        ],
+        estcita_id:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        estcita_nombre:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        }
+    }
+};
+
+db.createCollection(medico,{
+    med_nroMatriculaProsional,
+    med_nombreCompleto,
+    med_consultorio,
+    med_especialidad
+}),
+{
+    $jsonSchema: {
+        bsonType:"object",
+        additionalProperties: false,
+        required: [
+            med_nroMatriculaProsional,
+            med_nombreCompleto,
+            med_consultorio,
+            med_especialidad
+        ],
+        med_nroMatriculaProsional:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        med_nombreCompleto:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        },
+        med_consultorio:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        med_especialidad:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        }
+
+    }
+};
+
+db.createCollection(especialidad,{
+    esp_id,
+    esp_nombre
+}),
+{
+    $jsonSchema: {
+        bsonType:"object",
+        additionalProperties: false,
+        required: [
+            esp_id,
+            esp_nombre
+        ],
+        esp_id:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        esp_nombre:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        }
+    }
+};
+
+db.createCollection(consultorio,{
+    cons_id,
+    cons_nombre
+}),
+{
+    $jsonSchema: {
+        bsonType:"object",
+        additionalProperties: false,
+        required: [
+            cons_id,
+            cons_nombre
+        ],
+        cons_id:{
+            bsonType:'int',
+            description: 'debe ser un numero'
+        },
+        cons_nombre:{
+            bsonType:'string',
+            description: 'debe ser una cadena de caracteres'
+        }
+    }
+};
+

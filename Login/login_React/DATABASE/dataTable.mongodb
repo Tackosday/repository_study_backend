@@ -1,0 +1,26 @@
+use("datalogin")
+db.usuario.insertMany([
+    {
+        "id":1,
+        "usuario":"Tackosday",
+        "nombre":"Juan David Escalante Castañeda",
+        "contrasena":"esc4lante55",
+        "token":null,
+        "email":"juandaesca5@hotmail.com"
+    },{
+        "id":2,
+        "usuario":"TheFred",
+        "nombre":"juan jose duran rincon",
+        "contrasena":"fred123",
+        "token":null,
+        "email":"juanjofred@hotmail.com"
+    },
+    {
+        "id":3,
+        "usuario":"avocadorable",
+        "nombre":"maria camila amaya rubio ",
+        "contrasena":"avoca333",
+        "token":null,
+        "email":"mcamila3@hotmail.com"
+    }
+])
