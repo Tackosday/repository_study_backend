@@ -1,0 +1,2 @@
+CREATE DATABASE Tackosday;
+DROP DATABASE Tackosday;

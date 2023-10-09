@@ -1,0 +1,406 @@
+//creacion de base de datos con 5 datas de ejemplo
+use("firstdb");
+db.createCollection("sucursal");
+db.sucursal.insertMany([
+    {
+        ID_Sucursal: 1,
+        Nombre: "provenza",
+        Direccion: "cra19 #24-68",
+        Telefono:1234567890
+    },
+    {
+        ID_Sucursal: 2,
+        Nombre: "lomalinda",
+        Direccion: "cra12 #24-68",
+        Telefono:4568791230
+    },
+    {
+        ID_Sucursal: 3,
+        Nombre: "el norte",
+        Direccion: "cra33 #24-68",
+        Telefono:3216549870
+        },
+    {
+        ID_Sucursal: 4,
+        Nombre: "cañaveral",
+        Direccion: "cra5 #35-48",
+        Telefono:1654298723
+            },
+    {
+        ID_Sucursal: 5,
+        Nombre: "morrorico",
+        Direccion: "",
+        Telefono:1635471657
+    }
+]);
+
+use("firstdb");
+db.createCollection("sucursal_automovil");
+db.sucursal_automovil.insertMany([
+    {
+        ID_Sucursal:1,
+        ID_automovil:1,
+        Cantidad_Disponible:7
+    },
+    {
+        ID_Sucursal:2,
+        ID_automovil:2,
+        Cantidad_Disponible:1
+    },
+    {
+        ID_Sucursal:3,
+        ID_automovil:3,
+        Cantidad_Disponible:6
+    },
+    {
+        ID_Sucursal:4,
+        ID_automovil:4,
+        Cantidad_Disponible:8
+    },
+    {
+        ID_Sucursal:5,
+        ID_automovil:5,
+        Cantidad_Disponible:5
+    }
+    
+]);
+
+use("firstdb");
+db.createCollection("reserva");
+db.reserva.insertMany([
+    {
+        ID_Reserva:1,
+        ID_Cliente:1,
+        ID_Automovil:1,
+        Fecha_Inicio:"01/08/2023",
+        Fecha_Fin:"04/09/2023",
+        Estado:"activo"
+    },
+    {
+        ID_Reserva:2,
+        ID_Cliente:2,
+        ID_Automovil:2,
+        Fecha_Inicio:"14/10/2023",
+        Fecha_Fin:"20/10/2023",
+        Estado:"pendiente"
+    },
+    {
+        ID_Reserva:3,
+        ID_Cliente:3,
+        ID_Automovil:3,
+        Fecha_Inicio:"26/06/2023",
+        Fecha_Fin:"05/07/2023",
+        Estado:"vencido"
+    },
+    {
+        ID_Reserva:4,
+        ID_Cliente:4,
+        ID_Automovil:4,
+        Fecha_Inicio:"16/04/2023",
+        Fecha_Fin:"04/10/2023",
+        Estado:"activo"
+    },
+    {
+        ID_Reserva:5,
+        ID_Cliente:5,
+        ID_Automovil:5,
+        Fecha_Inicio:"12/08/2023",
+        Fecha_Fin:"20/08/2023",
+        Estado:"pendiente"
+    },
+])
+
+use("firstdb");
+db.createCollection("automovil");
+db.automovil.insertMany([
+    {
+        ID_automovil:1,
+        Marca:"acura",
+        Modelo:"nsx",
+        Anio:1992,
+        Tipo:"lujo"
+    },
+    {
+        ID_automovil:2,
+        Marca:"dodge",
+        Modelo:"challenger sxt",
+        Anio:2010,
+        Tipo:"deportivo"
+    },
+    {
+        ID_automovil:3,
+        Marca:"volkswagen",
+        Modelo:"taos",
+        Anio:2022,
+        Tipo:"familiar"
+    },
+    {
+        ID_automovil:4,
+        Marca:"renault",
+        Modelo:"twizy",
+        Anio:2022,
+        Tipo:"electrico"
+    },
+    {
+        ID_automovil:5,
+        Marca:"toyota",
+        Modelo:"hilux GR-Sport",
+        Anio:2019,
+        Tipo:"camioneta"
+    }
+]);
+
+use("firstdb");
+db.createCollection("cliente");
+db.cliente.insertMany([
+    {
+        ID_cliente:1635465,
+        Nombre:"emily ",
+        Apellido:"visancio",
+        DNI:"vw64e51dv",
+        Direccion:"cra15 #15-9",
+        Telefono:1234567890,
+        Email:"emyliexample@hotmail.com"
+    },
+    {
+        ID_cliente:254682,
+        Nombre:"camila",
+        Apellido:"amaya",
+        DNI:"qe541a964d",
+        Direccion:"cra78 #56-4",
+        Telefono:3182467213,
+        Email:"avocadorable@gmail.com"
+    },
+    {
+        ID_cliente:164216357,
+        Nombre:"juan",
+        Apellido:"duran",
+        DNI:"vw64r51",
+        Direccion:"cra 15 #45bis",
+        Telefono:21354687217,
+        Email:"juanjobackend@hotmail.com"
+    },
+    {
+        ID_cliente:1895327456,
+        Nombre:"paula",
+        Apellido:"rodrigez",
+        DNI:"v54sd1651s",
+        Direccion:"cra18 #54-8",
+        Telefono:45642165154,
+        Email:"pinchepaula@gmail.com"
+    },
+    {
+        ID_cliente:163845135,
+        Nombre:"juan",
+        Apellido:"Escalante",
+        DNI:"1f68a1vd3",
+        Direccion:"cra15 #104-40",
+        Telefono:38541561543,
+        Email:"juandaesca5@hotmail.com"
+    }
+]);
+
+use("firstdb");
+db.createCollection("alquiler")
+db.alquiler.insertMany([
+    {
+    ID_alquiler:1,
+    ID_cliente:1,
+    ID_automovil:1,
+    Fecha_Inicio:"01/07/2023",
+    Fecha_Fin:"03/07/2023",
+    Costo_total:300000,
+    Estado:"Activo"    
+    },
+    {
+    ID_alquiler:2,
+    ID_cliente:2,
+    ID_automovil:2,
+    Fecha_Inicio:"04/07/2023",
+    Fecha_Fin:"04/08/2023",
+    Costo_total:800000,
+    Estado:"vencido"    
+    },
+    {
+    ID_alquiler:3,
+    ID_cliente:3,
+    ID_automovil:3,
+    Fecha_Inicio:"06/09/2023",
+    Fecha_Fin:"08/10/2023",
+    Costo_total:750000,
+    Estado:"pendiente"    
+    },
+    {
+    ID_alquiler:4,
+    ID_cliente:4,
+    ID_automovil:4,
+    Fecha_Inicio:"04/08/2023",
+    Fecha_Fin:"06/08/2023",
+    Costo_total:400000,
+    Estado:"pendiente"    
+    },
+    {
+    ID_alquiler:5,
+    ID_cliente:5,
+    ID_automovil:5,
+    Fecha_Inicio:"04/07/2023",
+    Fecha_Fin:"06/09/2023",
+    Costo_total:1480000,
+    Estado:"activo"    
+    }
+]);
+
+use("firstdb");
+db.createCollection("registro_devolucion");
+db.registro_devolucion.insertMany([
+    {
+        ID_Registro:1,
+        ID_Alquiler:1,
+        ID_Empleado:1,
+        Fecha_Devolucion:"04/06/2023",
+        Combustible_Devuelto:5.1,
+        Kilometraje_Devuelto:155,
+        Monto_Adicional:1.5
+
+    },
+    {
+        ID_Registro:2,
+        ID_Alquiler:2,
+        ID_Empleado:2,
+        Fecha_Devolucion:"//2023",
+        Combustible_Devuelto:4.5,
+        Kilometraje_Devuelto:1525,
+        Monto_Adicional:4.5
+
+    },
+    {
+        ID_Registro:3,
+        ID_Alquiler:3,
+        ID_Empleado:3,
+        Fecha_Devolucion:"//2023",
+        Combustible_Devuelto:3.4,
+        Kilometraje_Devuelto:625,
+        Monto_Adicional:9.4
+
+    },
+    {
+        ID_Registro:4,
+        ID_Alquiler:4,
+        ID_Empleado:4,
+        Fecha_Devolucion:"//2023",
+        Combustible_Devuelto:4.3,
+        Kilometraje_Devuelto:625,
+        Monto_Adicional:6.7
+
+    },
+    {
+        ID_Registro:5,
+        ID_Alquiler:5,
+        ID_Empleado:5,
+        Fecha_Devolucion:"//2023",
+        Combustible_Devuelto:4.5,
+        Kilometraje_Devuelto:625,
+        Monto_Adicional:5.4
+
+    }
+]);
+
+use("firstdb");
+db.createCollection("registro_entrega");
+db.registro_entrega.insertMany([
+    {
+        ID_Registro:1,
+        ID_Alquiler:1,
+        ID_Empleado:1,
+        Fecha_entrega:"15/07/2023",
+        Combustible_entregado:3.2,
+        Kilometraje_entregado:165
+
+    },
+    {
+        ID_Registro:2,
+        ID_Alquiler:2,
+        ID_Empleado:2,
+        Fecha_entrega:"18/08/2023",
+        Combustible_entregado:4.3,
+        Kilometraje_entregado:18154
+
+    },
+    {
+        ID_Registro:3,
+        ID_Alquiler:3,
+        ID_Empleado:3,
+        Fecha_entrega:"13/06/2023",
+        Combustible_entregado:1.4,
+        Kilometraje_entregado:561
+
+    },
+    {
+        ID_Registro:4,
+        ID_Alquiler:4,
+        ID_Empleado:4,
+        Fecha_entrega:"18/07/2023",
+        Combustible_entregado:4.1,
+        Kilometraje_entregado:51
+
+    },
+    {
+        ID_Registro:5,
+        ID_Alquiler:5,
+        ID_Empleado:5,
+        Fecha_entrega:"15/09/2023",
+        Combustible_entregado:5.1,
+        Kilometraje_entregado:155
+
+    }
+]);
+
+use("firstdb");
+db.createCollection("registro_entrega");
+db.registro_entrega.insertMany([
+    {
+    ID_Empleado:1,
+    Nombre:"jorge",
+    Apellido:"Nitales",
+    DNI:"51cd6s5a1c",
+    Direccion:"cra15 #18c",
+    Telefono:"651354751",
+    cargo:"supervisor"
+    },
+    {
+    ID_Empleado:2,
+    Nombre:"benito",
+    Apellido:"kamelas",
+    DNI:"ac4s61",
+    Direccion:"cra48 #14-5c",
+    Telefono:"516513215",
+    cargo:"ventas"
+    },
+    {
+    ID_Empleado:3,
+    Nombre:"juan",
+    Apellido:"cardozo",
+    DNI:"6ca4s651c",
+    Direccion:"cra18 #15-78",
+    Telefono:"2432165452",
+    cargo:"ventas"
+    },
+    {
+    ID_Empleado:4,
+    Nombre:"laura",
+    Apellido:"camacho",
+    DNI:"a4cs13",
+    Direccion:"cra4 #14-1c",
+    Telefono:"1254681523",
+    cargo:"contador"
+    },
+    {
+    ID_Empleado:5,
+    Nombre:"lee",
+    Apellido:"sarmiento",
+    DNI:"c65as16c5",
+    Direccion:"cra15 54c bis",
+    Telefono:"1973546820",
+    cargo:"programador"
+    }
+])
