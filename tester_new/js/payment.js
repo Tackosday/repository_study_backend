@@ -1,3 +1,0 @@
-function payment(){
-    this.id;
-}
