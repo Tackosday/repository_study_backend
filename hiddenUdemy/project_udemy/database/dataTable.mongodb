@@ -1,0 +1,27 @@
+use("darkudemy")
+db.user.insertMany([
+    {
+        "id":1,
+        "name":"Juan David Escalante Castañeda",
+        "user":"Tackosday",
+        "password":"Escalante379155",
+        "phone":3133513939,
+        "token":null,
+        "email":"juandaesca5@hotmail.com",
+        "role":2,
+        "gender":"Masculino"
+    },
+    {
+        "id":2,
+        "name":"Maria Camila Amaya Rubio",
+        "user":"Admin",
+        "password":"123",
+        "phone":3153693438,
+        "token":null,
+        "email":"avocado@gmail.com",
+        "role":1,
+        "gender":"Femenino"
+    },
+ 
+])
+ 

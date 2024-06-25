@@ -1,0 +1,24 @@
+use("clay_bioseguridad")
+db.pais.insertMany([
+  {
+    "id": 110,
+    "nombre":"panama"
+  },
+  {
+    "id": 580,
+    "nombre": "argentina"
+  },
+  {
+    "id": 437,
+    "nombre": "colombia"
+  },
+  {
+    "id": 890,
+    "nombre": "republica dominicana"
+  },
+  {
+    "id": 125,
+    "nombre": "rusia"
+  },
+
+])

@@ -1,0 +1,74 @@
+use("nike_db");
+db.createCollection("user", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "user",
+      required: ["id", "user", "password", "token", "email", "role"],
+      properties: {
+        "id":{
+          bsonType: "number",
+          description: "el id debe de ser un numero"
+        },
+         "user":{
+           bsonType: "string",
+           description: "el user debe de ser una cadena de caracteres"
+        },
+         "password":{
+           bsonType: "string",
+           description: "el password debe de ser una cadena de caracteres"
+        },
+         "token":{
+           bsonType: ["string","null"],
+           description: "el token debe de ser una cadena de caracteres"
+        },
+         "email":{
+           bsonType: "string",
+           description: "el email debe de ser una cadena de caracteres"
+        },
+         "role":{
+           bsonType: "string",
+           description: "el role debe de ser una cadena de caracteres"
+        }
+      },
+      uniqueItems: true,
+      additionalItems: false
+    }
+  }
+})
+
+
+use("nike_db");
+db.createCollection("products", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "products",
+      required: ["id","name","description","price","image"],
+      properties: {
+        "id":{
+          bsonType: "number",
+          description: "el id debe de ser un numero"
+        },
+        "name":{
+          bsonType: "string",
+          description: "el name debe de ser un string"
+        },
+        "description":{
+          bsonType: "string",
+          description: "el description debe de ser un string"
+        },
+        "price":{
+          bsonType: "number",
+          description: "el price debe de ser un numero"
+        },
+        "image":{
+          bsonType: "string",
+          description: "el image debe de ser un string"
+        }
+      },
+      uniqueItems: true,
+      additionalItems: false
+    }
+  }
+})

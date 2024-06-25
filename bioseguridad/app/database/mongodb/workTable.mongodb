@@ -1,0 +1,24 @@
+use("clay_bioseguridad")
+db.createCollection("pais", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "user",
+      required: ["id","nombre"],
+      properties: {
+        
+        "id": {
+          bsonType: "number",
+          description: "el id debe de se un numero"
+        },
+        "nombre": {
+          bsonType: "string",
+          maxLength:50,
+          description: " el nombre debe de ser una string menor de 50 caracteres"
+        }
+      },
+      uniqueItems: true,
+      additionalItems:false
+    }
+  }
+})

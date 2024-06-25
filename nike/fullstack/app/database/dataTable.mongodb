@@ -1,0 +1,24 @@
+use("nike_db")
+db.user.insertMany([
+  {
+    "id": 1,
+    "user": "Tackosday",
+    "password": "123",
+    "token": null,
+    "email": "juandaesca5@hotmail.com",
+    "role": "user",
+  },
+  {
+    "id": 2,
+    "user": "admin",
+    "password": "123",
+    "token": null,
+    "email": "juandaesca0@gmail.com",
+    "role": "admin",
+  }
+])
+
+products
+
+use("nike_db")
+db.products.insertMany([])

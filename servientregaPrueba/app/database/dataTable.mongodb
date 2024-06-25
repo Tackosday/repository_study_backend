@@ -1,0 +1,26 @@
+use("servientrega")
+db.espesificaciones.insertMany([
+    {
+    "id":1,
+    "tipoDelPaquete":1,
+    "tipoDeProducto":"delicado",
+    "tipoDeEnvio":"internacional",
+    "estadoDelPaquete":"enviado",
+    "codigoPostal":"0021",
+    "origen":"bucaramanga / santander / colombia",
+    "destino":"new york / estado de newyork/ estados unidos de america",
+    "rutaDeEnvio":1
+    },
+    {
+        "id":2,
+        "tipoDelPaquete":2,
+        "tipoDeProducto":"normal",
+        "tipoDeEnvio":"nacional",
+        "estadoDelPaquete":"Bodega",
+        "codigoPostal":"6432",
+        "origen":"bogota / antioquia / colombia",
+        "destino":"bucaramanga / santander/ colombia",
+        "rutaDeEnvio":2
+        },
+
+])

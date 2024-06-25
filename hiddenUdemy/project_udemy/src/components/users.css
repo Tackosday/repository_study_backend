@@ -1,0 +1,158 @@
+.userBody{
+    height: 100%;
+    width: 100%;
+    background-color: #00001c;
+}
+
+.seccionNatvarU {
+    position: relative;
+    width: 400px;
+}
+
+.seccionTotal{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.whiteboard{
+    background-color: rgb(246, 255, 255);
+    height: 90%;
+    width: 70%;
+    margin-right: 3%;
+    border-left:solid yellow;
+    border-right:solid #ff00ee;
+    border-top:solid yellow;
+    border-bottom:solid #ff00ee;
+    border-width: 7px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    overflow-x:scroll ;
+    overflow-y: auto;
+}
+
+.textCel{
+    margin: 0px;
+}
+
+.filaHeader{
+display: flex;
+justify-content: start;
+}
+
+.fila{
+    display: flex;
+    justify-content: start;
+    }
+
+.celdaHed{
+
+    height: 30px;
+    background-color: #ff00ee;
+    border: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nombre{
+    width: 200px;
+    border: solid;
+}
+
+.userName{
+    width: 100px;
+    border: solid;
+    border-left: none;
+}
+
+.role{
+    width: 60px;
+    border: solid;
+    border-left: none;
+}
+
+.nombreCel{
+    width: 201px;
+    border: solid;
+    border-width: 2px;
+    overflow:hidden;
+}
+
+.userNameCel{
+    width: 101px;
+    border: solid;
+    border-left: none;
+    border-width: 2px;
+    overflow:hidden;
+}
+
+.roleCel{
+    width: 61px;
+    border: solid;
+    border-left: none;
+    border-width: 2px;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media (max-width: 1000px) {
+    .whiteboard{
+        width: 60%;
+    }
+}
+
+@media (max-width: 700px) {
+    .whiteboard{
+        width: 90%;
+        margin-right: 0px;
+    }
+    .seccionTotal{
+        align-items: start;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+/* checkbox */
+.lock-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .lock-checkbox input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .lock-icon {
+    fill: #00ff40;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 34px;
+    height: 34px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .lock-checkbox input[type="checkbox"]:checked + .lock-icon {
+    fill: #ff0000;
+  }
+  

@@ -1,0 +1,227 @@
+use("servientrega")
+db.createCollection("espesificaciones", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "user",
+      required: ["id","tipoDelPaquete","tipoDeProducto","tipoDeEnvio","estadoDelPaquete","codigoPostal","origen","destino","rutaDeEnvio"],
+      properties: {
+        "id":{
+            bsonType: "number",
+            description: "el id debe de se un numero"
+        },
+        "tipoDelPaquete":{
+            bsonType: "number",
+            description: "el id debe de se un numero"
+        }
+        ,
+        "tipoDeProducto":{
+            bsonType: "string",
+            maxLength:50,
+            description: "el id debe de se una cadena de caracteres menos de 50 caracteres"
+        },
+        "tipoDeEnvio":{
+            bsonType: "string",
+            maxLength:50,
+            description: "el id debe de se una cadena de caracteres menos de 50 caracteres"
+        },
+        "estadoDelPaquete":{
+            bsonType: "string",
+            maxLength:50,
+            description: "el id debe de se una cadena de caracteres menos de 50 caracteres"
+        },
+        "codigoPostal":{
+            bsonType: "string",
+            maxLength:50,
+            description: "el id debe de se una cadena de caracteres menos de 50 caracteres"
+        }   ,
+        "origen":{
+            bsonType: "string",
+            maxLength:255,
+            description: "el id debe de se una cadena de caracteres menos de 255 caracteres"
+        },
+        "destino":{
+            bsonType: "string",
+            maxLength:255,
+            description: "el id debe de se una cadena de caracteres menos de 255 caracteres"
+        },
+        "rutaDeEnvio":{
+            bsonType: "number",
+            description: "el id debe de se un numero"
+        }
+      },
+      uniqueItems: true,
+      additionalItems:false
+    }
+  }
+})
+
+use("servientrega")
+db.createCollection("estadoEnvio", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "user",
+      required: ["idRegistro","idProducto","medioTransporte","pais","munisipio","sede","fechaDeEntrega","FechaDeSalida","proceso"],
+      properties: {
+
+      "idRegistro":{
+        bsonType: "number",
+        description: "el id debe de se un numero"
+      },
+      "idProducto":{
+        bsonType: "number",
+        description: "el id debe de se un numero"
+      },
+      "medioTransporte":{
+        bsonType: "string",
+        maxLength:50,
+        description: "el id debe de se una cadena de caracteres menos de 50 caracteres"
+      },
+      "pais":{
+        bsonType: "string",
+        maxLength:50,
+        description: "el id debe de se una cadena de caracteres menos de 50 caracteres"
+      },
+      "munisipio":{
+        bsonType: "string",
+        maxLength:50,
+        description: "el id debe de se una cadena de caracteres menos de 50 caracteres"
+      },
+      "sede":{
+        bsonType: "string",
+        maxLength:100,
+        description: "el id debe de se una cadena de caracteres menos de 100 caracteres"
+      },
+      "fechaDeEntrega":{
+        bsonType: "date",
+        description: "el _ debe de ser una fecha valida"
+      },
+      "FechaDeSalida":{
+        bsonType: "date",
+        description: "el _ debe de ser una fecha valida"
+      },
+      "proceso":{
+        bsonType: "number",
+        description: "el id debe de se un numero"
+      }
+
+      },
+      uniqueItems: true,
+      additionalItems:false
+    }
+  }
+})
+
+use("servientrega")
+db.createCollection("historialEnvios", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "user",
+      required: ["idRegistro","idProducto","estado","fecha"],
+      properties: {
+        "idRegistro":{
+            bsonType: "number",
+            description: "el id debe de se un numero"
+        },
+        "idProducto":{
+            bsonType: "number",
+            description: "el id debe de se un numero"
+        },
+        "estado":{
+            bsonType: "string",
+            maxLength:100,
+            description: "el id debe de se una cadena de caracteres menos de 100 caracteres"
+        },
+        "fecha":{
+            bsonType: "date",
+            description: "el _ debe de ser una fecha valida"
+        }
+      
+      },
+      uniqueItems: true,
+      additionalItems:false
+    }
+  }
+})
+
+use("servientrega")
+db.createCollection("rutasDeEnvio", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "user",
+      required: ["idRuta","sedes","mediosDeTransporte","descripcion"],
+      properties: {
+
+        "idRuta":{
+            bsonType: "number",
+            description: "el id debe de se un numero"
+        },
+        "sedes":{
+            bsonType: "string",
+            maxLength:50,
+            description: "el id debe de se una cadena de caracteres menos de 50 caracteres"
+        
+        },
+        "mediosDeTransporte":{
+            bsonType: "array",
+            description: "el id debe de se un array"
+        },
+        "descripcion":{
+            bsonType: "string",
+            maxLength:255,
+            description: "el id debe de se una cadena de caracteres menos de 255 caracteres"
+        
+        }
+
+      },
+      uniqueItems: true,
+      additionalItems:false
+    }
+  }
+})
+
+use("servientrega")
+db.createCollection("tipoDelPaquete", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "user",
+      required: ["id","nombre","dimensiones","peso","precio"],
+      properties: {
+
+        "id":{
+            bsonType: "number",
+            description: "el id debe de se un numero"
+        },
+        "nombre":{
+            bsonType: "string",
+            maxLength:50,
+            description: "el id debe de se una cadena de caracteres menos de 50 caracteres"
+        
+        },
+        "dimensiones":{
+            bsonType: "string",
+            maxLength:50,
+            description: "el id debe de se una cadena de caracteres menos de 50 caracteres"
+        
+        },
+        "peso":{
+            bsonType: "string",
+            maxLength:50,
+            description: "el id debe de se una cadena de caracteres menos de 50 caracteres"
+        
+        },
+        "precio":{
+            bsonType: "number",
+            description: "el id debe de se un numero"
+        }
+
+      },
+      uniqueItems: true,
+      additionalItems:false
+    }
+  }
+})

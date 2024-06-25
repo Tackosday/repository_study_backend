@@ -1,0 +1,85 @@
+use("darkudemy")
+db.createCollection("user",{
+    validator: {
+        $jsonSchema: {
+            bsonType:"object",
+            title:"user",
+            required: ["id","name","user","password","phone","token","email","role","gender"],
+            properties:{
+                "id":{
+                    bsonType:"number",
+                    description:"el id debe de ser un numero"
+                },
+                "name":{
+                    bsonType:"string",
+                    maxLength:100,
+                    description:"el name debe de ser una cadena de caracteres menor a 100 caracteres"
+                },
+                "user":{
+                    bsonType:"string",
+                    maxLength:50,
+                    description:"el user debe de ser una cadena de caracteres menor a 50 caracteres"
+                },
+                "password":{
+                    bsonType:"string",
+                    maxLength:80,
+                    description:"el password debe de ser una cadena de caracteres menor a 80 caracteres"
+                },
+                "phone":{
+                    bsonType:"number",
+                    description:"el phone debe de ser un numero"
+                },
+                "token":{
+                    bsonType:["string","null"],
+                    description:"el token debe de ser una cadena de caracteres"
+                },
+                "email":{
+                    bsonType:"string",
+                    maxLength:100,
+                    description:"el email debe de ser una cadena de caracteres menor a 100 caracteres"
+                },
+                "role":{
+                    bsonType:"number",
+                    description:"el role debe de ser un numero"
+                },
+                "gender":{
+                    bsonType:"string",
+                    maxLength:50,
+                    description:"el gender debe de ser una cadena de caracteres menor a 50 caracteres"
+                }
+            },
+            uniqueItems:true,
+            additionalItems:false
+        }
+    }
+})
+
+use("darkudemy")
+db.createCollection("roles",{
+    validator: {
+        $jsonSchema: {
+            bsonType:"object",
+            title:"role",
+            required: [
+                "id","name","description"],
+            properties:{
+                "id":{
+                    bsonType:"number",
+                    description:"el id debe de ser un numero "
+                },
+                "name":{
+                    bsonType:"string",
+                    maxLength:100,
+                    description:"el name debe de ser una cadena de caracteres menor a 100 caracteres"
+                },
+                "description":{
+                    bsonType:"string",
+                    maxLength:500,
+                    description:"el description debe de ser una cadena de caracteres menor a 500 caracteres"
+                },
+            },
+            uniqueItems:true,
+            additionalItems:false
+        }
+    }
+})

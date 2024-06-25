@@ -1,0 +1,159 @@
+.block {
+    height: 100%;
+    background-image: linear-gradient(rgb(51, 231, 255), rgb(255, 72, 203));
+    width: 250px;
+    border-bottom-right-radius: 15px;
+    position: fixed;
+}
+
+.cont {
+    background-color: #00002e;
+    height: 100%;
+    width: 98%;
+    border-bottom-right-radius: 15px;
+}
+
+.margin {
+    margin-left: 30px;
+    height: 100%;
+}
+
+.user {
+    display: flex;
+    overflow: hidden;
+    width: 200px;
+    height: 10%;
+    
+}
+
+.username {
+    color: yellow;
+    margin: 0px;
+    padding-top: 30px;
+    margin-bottom: 20px;
+
+}
+
+
+.btn {
+    align-items: center;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: 0;
+    border: 0;
+    padding: 1rem;
+}
+
+.btn:before {
+    background-color: #fff;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-right: 10px;
+    transition: all .42s cubic-bezier(.25, .8, .25, 1);
+    width: 0;
+}
+
+.btn:hover:before {
+    background-color: yellow;
+    width: 30px;
+    height: 2px;
+}
+
+
+.logout {
+    width: 7em;
+    height: 2.3em;
+    margin: 0.5em;
+    margin-bottom: 10%;
+    background: #00002e00;
+    color: yellow;
+    border: solid;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.logout:hover {
+    color: #00002e;
+}
+
+.logout:after {
+    content: "";
+    background: yellow;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+
+.logout:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.redireccion {
+    height: 60%;
+}
+
+.footer {
+    display: flex;
+    align-items: end;
+    height: 20%;
+}
+
+.hamb {
+    height: 40px;
+}
+
+.hamb2 {
+    height: 40px;
+    margin-left: 20px ;
+    display: none;
+    align-self: end;
+}
+
+.hamburger {
+    display: none;
+    margin-top: 10px;
+    margin: 20px;
+    height: 40px;
+}
+
+
+@media (max-Width: 700px) {
+    .block {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+@media (min-Width: 701px) {
+    .block {
+        display: block;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}

@@ -1,0 +1,18 @@
+ .container{
+    background-image: url('../../../public/HFR-hero-june21-beat.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    margin: 0px;
+    width: 100%;
+ }
+
+ .filter{
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(2px);
+ }
+
+ .title{
+    margin: 0px;
+ }

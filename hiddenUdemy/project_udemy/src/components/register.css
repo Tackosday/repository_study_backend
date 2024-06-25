@@ -1,0 +1,291 @@
+#root{
+    height: 100%;
+    width: 100%;
+}
+
+.orderBoxR{
+    display:flex;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    justify-content: end;
+    align-items: center;
+}
+
+
+.borderdivR{
+    border-radius: 10px;
+    background-image:linear-gradient(240deg,rgb(239, 11, 243),rgb(0, 12, 74));
+    height: 800px;
+    width: 320px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logdivR{
+    color:white;
+    background-color:black;
+    height: 99%;
+    width: 97%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    text-align: center;
+    display: flex;
+    display: inline;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.forgot,a{
+    color:rgb(239, 11, 243);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.forgot:hover{
+    color:rgb(255, 255, 255);
+}
+
+.par{
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+
+
+.ui-btn {
+    border-radius: 10px;
+    margin:auto ;
+    margin-bottom: 20px;
+    --btn-default-bg: rgb(41, 41, 41);
+    --btn-padding: 15px 20px;
+    --btn-hover-bg: rgb(51, 51, 51);
+    --btn-transition: .3s;
+    --btn-letter-spacing: .1rem;
+    --btn-animation-duration: 1.2s;
+    --btn-shadow-color: rgba(0, 0, 0, 0.137);
+    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+    --hover-btn-color: rgb(239, 11, 243);;
+    --default-btn-color: #fff;
+    --font-size: 16px;
+    /* 👆 this field should not be empty */
+    --font-weight: 600;
+    --font-family: Menlo,Roboto Mono,monospace;
+    /* 👆 this field should not be empty */
+  }
+  
+  /* button settings 👆 */
+  
+  .ui-btn {
+    box-sizing: border-box;
+    padding: var(--btn-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-btn-color);
+    font: var(--font-weight) var(--font-size) var(--font-family);
+    background: var(--btn-default-bg);
+    border: none;
+    cursor: pointer;
+    transition: var(--btn-transition);
+    overflow: hidden;
+    box-shadow: var(--btn-shadow);
+  }
+  
+  .ui-btn span {
+    letter-spacing: var(--btn-letter-spacing);
+    transition: var(--btn-transition);
+    box-sizing: border-box;
+    position: relative;
+    background: inherit;
+  }
+  
+  .ui-btn span::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    background: inherit;
+  }
+  
+  .ui-btn:hover, .ui-btn:focus {
+    background: var(--btn-hover-bg);
+  }
+  
+  .ui-btn:hover span, .ui-btn:focus span {
+    color: var(--hover-btn-color);
+  }
+  
+  .ui-btn:hover span::before, .ui-btn:focus span::before {
+    animation: chitchat linear both var(--btn-animation-duration);
+  }
+  
+  @keyframes chitchat {
+    0% {
+      content: "#";
+    }
+  
+    5% {
+      content: ".";
+    }
+  
+    10% {
+      content: "^{";
+    }
+  
+    15% {
+      content: "-!";
+    }
+  
+    20% {
+      content: "#$_";
+    }
+  
+    25% {
+      content: "№:0";
+    }
+  
+    30% {
+      content: "#{+.";
+    }
+  
+    35% {
+      content: "@}-?";
+    }
+  
+    40% {
+      content: "?{4@%";
+    }
+  
+    45% {
+      content: "=.,^!";
+    }
+  
+    50% {
+      content: "?2@%";
+    }
+  
+    55% {
+      content: "\;1}]";
+    }
+  
+    60% {
+      content: "?{%:%";
+      right: 0;
+    }
+  
+    65% {
+      content: "|{f[4";
+      right: 0;
+    }
+  
+    70% {
+      content: "{4%0%";
+      right: 0;
+    }
+  
+    75% {
+      content: "'1_0<";
+      right: 0;
+    }
+  
+    80% {
+      content: "{0%";
+      right: 0;
+    }
+  
+    85% {
+      content: "]>'";
+      right: 0;
+    }
+  
+    90% {
+      content: "4";
+      right: 0;
+    }
+  
+    95% {
+      content: "2";
+      right: 0;
+    }
+  
+    100% {
+      content: "";
+      right: 0;
+    }
+  }
+
+.input{
+    background-color: rgba(0, 0, 139, 0);
+    border: none;
+    border-bottom:solid;
+    border-color: rgb(239, 11, 243);
+    color:white;
+}
+
+.input:focus{
+    border: none;
+    border-bottom:solid;
+    border-color: rgb(239, 11, 243);
+    outline:none ;
+}
+
+@media (max-width: 800px) {
+    
+    .orderBoxR{
+        
+        justify-content: center;
+    }
+    .borderdivR{
+        height: 400px;
+    }
+    .logdivR{
+        overflow: scroll;
+        align-items: start;
+    }
+  }
+
+  @media (min-width: 800px) {
+    
+    .borderdivR{
+        margin-right: 400px;
+    }
+  }
+
+  @media (max-height: 800px) {
+
+
+  .borderdivR{
+      height: 400px;
+  }
+  .logdivR{
+      overflow: scroll;
+      align-items: start;
+  }
+
+    
+  }
+
+  select{
+    background-color: rgba(0, 0, 139, 0);
+    width: 172px;
+    border: none;
+    border-bottom:solid;
+    border-color: rgb(239, 11, 243);
+    color:white;
+  }
+
+  option{
+    color: white;
+    background-color:#ef0bf3 ;
+  }
