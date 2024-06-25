@@ -1,0 +1,116 @@
+html,body{
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+
+.natvarContainer{
+  background-color: rgb(252, 206, 70);
+  display: flex;
+  height: 8%;
+}
+
+.logo{
+  width: 200px;
+  margin-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.seccionContainer{
+width: 50%;
+}
+
+.secTwo{
+display: flex;
+justify-content: end;
+}
+
+.redirection{
+  height: 100%;
+  margin: 0 10px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.redirectionTwo{
+  display: flex;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+.hamburger{
+ display:none
+}
+
+.redirection:hover{
+  background-color:rgb(249, 187, 0);
+}
+
+.redirectionTwo:hover{
+  background-color:rgb(249, 149, 0);
+}
+
+.menuDesplegableLayer{
+
+display: none;
+
+}
+
+.menuDesplegable{
+  width: 200px;
+  background-color: rgb(247, 190, 21);
+  color: black;
+}
+
+
+
+
+@media (max-width:800px) {
+  .redirection{
+    display: none;
+  }
+  .hamburger{
+    display:block;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    margin-right: 10px;
+  }
+
+  .secTwo{
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+ /* functionsStylesReact */
+
+ /* hamburger */
+
+.menuDesplegableLayerShow{
+position: absolute;
+z-index: 5;
+width: 100%;
+display: flex;
+justify-content: end;
+}
+.menuDesplegableLayerHidden{
+
+display: none;
+
+}
+
